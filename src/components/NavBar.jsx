@@ -14,7 +14,7 @@ const NavBar = () => {
               <div className="rounded-full shadow-md">
               </div>
               {connectedAccount?
-               ( <button disabled type='button' className='bg-[#fd1c1c]  px-3 py-2 rounded text-gray-100 font-semibold'>
+               ( <button disabled type='button' className='bg-[#fd1c1c]  px-3 py-2 rounded text-gray-50 font-semibold'>
                     {/* {truncate(connectedAccount,6,6,15)} */} ox7dfdu..3s9uys
                 </button> ):(
                   // onClick={()=>connectWallet()}

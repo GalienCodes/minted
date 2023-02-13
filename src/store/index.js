@@ -21,16 +21,16 @@ const truncate = (text, startChars, endChars, maxLength) => {
 }
 
 const setAlert = (msg, color = 'green') => {
+  setGlobalState('loading', false)
   setGlobalState('alert', { show: true, msg, color })
   setTimeout(() => {
     setGlobalState('alert', { show: false, msg: '', color })
-    setGlobalState('loading', false)
-  }, 8000)
+  }, 3000)
 }
 
 const setLoadingMsg = (msg) => {
   const loading = getGlobalState('loading')
-  setGlobalState('loading', { ...loading, msg })
+  setGlobalState('loading', {show: true, msg })
 }
 
 export {

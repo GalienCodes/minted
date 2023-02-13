@@ -6,14 +6,9 @@ import { payToMint } from '../Minted'
 const Banner = () => {
 
   const onMintNFT = async () => {
-    setGlobalState('loading', {
-      show: true,
-      msg: 'Minting new NFT to your account',
-    })
 
     await payToMint()
-      .then(() => setAlert('Minting Successful...', 'green'))
-      .catch(() => setGlobalState('loading', { show: false, msg: '' }))
+ 
   }
   return (
     <div className='max-w-4xl mx-auto  text-gray-100 items-start  pt-32'>

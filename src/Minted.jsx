@@ -1,6 +1,6 @@
 import abi from './abis/src/contracts/Minted.sol/Minted.json'
 import address from './abis/contractAddress.json'
-import { getGlobalState, setGlobalState } from './store'
+import { getGlobalState, setAlert, setGlobalState, setLoadingMsg } from './store'
 import { ethers } from 'ethers'
 import { toast } from 'react-toastify'
 
@@ -64,14 +64,17 @@ const payToMint = async () => {
     const connectedAccount = getGlobalState('connectedAccount')
     const contract = getEtheriumContract()
     const amount = ethers.utils.parseEther('0.001')
-
+    setLoadingMsg("Minting new NFT to your account","white")
     await contract.payToMint({
       from: connectedAccount,
       value: amount._hex,
     })
-
+    
+    setAlert('Minting Successfully!','white')
     window.location.reload()
   } catch (error) {
+    setAlert("Proccess failed",'red')
+    console.log(error);
     reportError(error)
   }
 }

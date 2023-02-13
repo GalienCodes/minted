@@ -2,6 +2,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@layer base {
+  body {
+    @apply bg-[#151c21];
+    @apply overflow-x-hidden
+  }
+}
 
 * html {
   padding: 0;
@@ -42,16 +48,7 @@ body {
     transform: rotate(360deg);
   }
 }
-.footer{
-  position: relative;
-  bottom: 0
-}
-@layer base {
-  body {
-    @apply bg-[#151c21];
-    @apply overflow-x-hidden
-  }
-}
+
 
 .fotter_d{
   position:absolute;

@@ -5,7 +5,7 @@ import Card from './Card'
 const ArtWorks = ({artworks}) => {
   const [nfts] = useGlobalState('nfts')
   return (
-    <div className='max-w-4xl mx-auto  text-gray-100 items-start  pt-10'>
+    <div className='max-w-4xl mx-auto  text-gray-100 items-start pb-20 py-10'>
       <h1 className='flex gap-2 items-center justify-center'>
         <h1 className='text-center py-8 font-semibold'> My NFT's</h1>
          <div

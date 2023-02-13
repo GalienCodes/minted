@@ -53,6 +53,7 @@ const connectWallet = async () => {
     if (!ethereum)  {console.log('Please install Metamask')}
     const accounts = await ethereum.request({ method: 'eth_requestAccounts' })
     setGlobalState('connectedAccount', accounts[0])
+    window.location.reload()
   } catch (error) {
     reportError(error)
   }
@@ -84,9 +85,11 @@ const loadNfts = async () => {
     if (!ethereum) return alert('Please install Metamask')
 
     const contract = getEtheriumContract()
+    setLoadingMsg("load Nfts","white")
     const nfts = await contract.getAllNFTs()
-
     setGlobalState('nfts', structuredNfts(nfts))
+    setAlert("Data gotten, refresh!","white")
+    
   } catch (error) {
     reportError(error)
   }
